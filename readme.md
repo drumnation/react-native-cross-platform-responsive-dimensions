@@ -5,9 +5,13 @@ I made this based off of react-native-responsive-dimensions which uses the devic
 
 As soon as I started working on the Android version I realized I would need specific settings for that too.  The ternary became nested and intense and I wanted to abstract it away.  Hence this component.  I hope it helps you.  I plan to keep working on it to make cross platform and device styling a lot easier.
 
-## Install
+<!-- ## Install
 ```bash
 $ npm install react-native-cross-responsive-dimensions --save
+``` -->
+## Install
+```bash
+$ npm install https://github.com/drumnation/react-native-cross-platform-responsive-dimensions/tarball/master --save
 ```
 
 ## Usage
