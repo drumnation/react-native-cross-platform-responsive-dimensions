@@ -10,7 +10,7 @@
 		"email": "davidmieloch@gmail.com",
 		"url": "davidmieloch.com"
 	},
-	"main": "components/Cross-Responsive-Dimensions.js",
+	"main": "components/index.js",
 	"directories": {
 		"example": "example"
 	},
