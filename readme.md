@@ -11,7 +11,7 @@ $ npm install react-native-cross-responsive-dimensions --save
 ``` -->
 ## Install
 ```bash
-$ npm install https://github.com/drumnation/react-native-cross-platform-responsive-dimensions/tarball/master --save
+$ npm install --save https://github.com/drumnation/react-native-cross-platform-responsive-dimensions/tarball/master 
 ```
 
 ## Usage
