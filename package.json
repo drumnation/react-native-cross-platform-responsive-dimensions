@@ -1,53 +1,53 @@
 {
-	"name": "react-native-cross-platform-responsive-dimensions",
-	"version": "0.1.0",
-	"description": "This component adds cross platform support for styling using responsive dimensions.",
-	"repository": "https://github.com/drumnation/react-native-cross-responsive-dimensions.git",
-	"homepage": "https://github.com/drumnation/react-native-cross-responsive-dimensions#readme",
-	"license": "MIT",
-	"author": {
-		"name": "drumnation",
-		"email": "davidmieloch@gmail.com",
-		"url": "davidmieloch.com"
-	},
-	"main": "components/index.js",
-	"directories": {
-		"example": "example"
-	},
-	"bugs": {
-		"url": "https://github.com/drumnation/react-native-cross-responsive-dimensions/issues"
-	},
-	"scripts": {
-		"test": "jest",
-		"renew-snap": "jest --updateSnapshot",
-		"clean-test": "jest --no-cache"
-	},
-	"files": [
-		"components/"
-	],
-	"keywords": [
-		"react-native",
-		"react-native component"
-	],
-	"peerDependencies": {
-		"react": "*",
-		"react-native": "*",
-		"prop-types": "*"
-	},
-	"devDependencies": {
-		"babel-jest": "^20.0.3",
-		"babel-preset-react-native": "^2.1.0",
-		"jest": "^20.0.4",
-		"jest-react-native": "^18.0.0",
-		"react": "16.0.0-alpha.12",
-		"react-native": "^0.46.4",
-		"react-test-renderer": "^16.0.0-alpha.12"
-	},
-	"jest": {
-		"preset": "react-native",
-		"modulePathIgnorePatterns": [
-			"<rootDir>/example/",
-			"<rootDir>/__tests__/mocks/"
-		]
-	}
+  "name": "react-native-cross-platform-responsive-dimensions",
+  "version": "0.1.0",
+  "description": "This component adds cross platform support for styling using responsive dimensions.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drumnation/react-native-cross-platform-responsive-dimensions.git"
+  },
+  "homepage": "https://github.com/drumnation/react-native-cross-platoform-responsive-dimensions#readme",
+  "license": "MIT",
+  "author": "drumnation <davidmieloch@gmail.com> (davidmieloch.com)",
+  "main": "components/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "bugs": {
+    "url": "https://github.com/drumnation/react-native-cross-platform-responsive-dimensions/issues"
+  },
+  "scripts": {
+    "test": "jest",
+    "renew-snap": "jest --updateSnapshot",
+    "clean-test": "jest --no-cache"
+  },
+  "files": [
+    "components/"
+  ],
+  "keywords": [
+    "react-native",
+    "react-native component"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "prop-types": "*"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-native": "^2.1.0",
+    "jest": "^20.0.4",
+    "jest-react-native": "^18.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.46.4",
+    "react-test-renderer": "^16.0.0-alpha.12"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/",
+      "<rootDir>/__tests__/mocks/"
+    ]
+  },
+  "dependencies": {}
 }
