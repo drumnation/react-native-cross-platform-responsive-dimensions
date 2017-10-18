@@ -24,9 +24,7 @@ $ npm install react-native-cross-responsive-dimensions --save
         crossPlatformOS,
         crossPlatformDevice } from "react-native-cross-platform-responsive-dimensions";
     ```
-2. Use the cross platform methods in your jss stylesheets. The function takes allows you to use responsive dimensions, setting different values with arguments that match the device: (IOS phone, IOS tablet, AndroidPhone, AndroidTablet). 
-
-This will also help lock the values for each device and OS to avoid wack-a-mole fix-breaking something on a different device than you're testing on.
+2. Use the cross platform methods in your jss stylesheets. The function takes allows you to use responsive dimensions, setting different values with arguments that match the device: (IOS phone, IOS tablet, AndroidPhone, AndroidTablet). This will also help lock the values for each device and OS to avoid wack-a-mole fix-breaking something on a different device than you're testing on.
     ```
     container: {
         backgroundColor: "white",
@@ -45,6 +43,7 @@ This will also help lock the values for each device and OS to avoid wack-a-mole 
         top: crossResponsiveHeight(10, 10, 10, 10)
     },
     ```
+
 3. Use crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet) for the same cross platform ease, but without the responsive scaling.
     ```
     <Image
@@ -60,6 +59,12 @@ This will also help lock the values for each device and OS to avoid wack-a-mole 
 4. Use crossPlatformOS(ios, android) when you don't need to specify individual values for all devices, but only need to specify either android or ios. Similar to crossPlatform device this doesn't produce an integer value. This is useful for fonts because each OS requires that the font be called differently.
     ```
     crossPlatformOS("Neuropolitical", "neuropolitical_regular")
+    ```
+5. The original react-native-responsive-dimensions commands are also available to use if you're ok setting the same value for all devices or creating your own conditional statement for each separate element.
+    ```
+    height: responsiveHeight(43),
+    marginLeft: responsiveWidth(10),
+    fontSize: responsiveFontSize(4)
     ```
 ## License
 MIT © [drumnation](https://github.com/drumnation/react-native-cross-responsive-dimensions)
