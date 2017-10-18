@@ -1,6 +1,6 @@
 {
   "name": "react-native-cross-platform-responsive-dimensions",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "This component adds cross platform support for styling using responsive dimensions.",
   "repository": {
     "type": "git",
