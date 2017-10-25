@@ -26,6 +26,16 @@ import { NativeModules, Platform, Dimensions } from "react-native";
 
 const { height, width } = Dimensions.get("window");
 
+export const isPortrait = () => {
+  if (height > width) return true;
+  return false;
+}
+
+export const isLandscape = () => {
+  if (height < width) return true;
+  return false;
+}
+
 export const responsiveHeight = (h => (height * (h / 100)));
 
 export const responsiveWidth = (w => width * (w / 100));
