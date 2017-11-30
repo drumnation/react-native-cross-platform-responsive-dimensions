@@ -66,5 +66,50 @@ $ npm install react-native-cross-responsive-dimensions --save
     marginLeft: responsiveWidth(10),
     fontSize: responsiveFontSize(4)
     ```
+
+## iPhoneX
+
+I've added some new functions to deal with devices that don't quite fit the dimensions of normal phones.  If you find you need to move something specifically for the notch on the iPhoneX, you can use these functions to do so.  If a property works on all devices with the same value don't pick one you'll need to duplicate a lot of values for.
+
+1. Keep your cross-platform styles but set specific values for iPhoneX.
+    ```
+    crossHeightX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
+    ```
+2. ResponsiveHeight for all devices except specific values for iPhoneX.
+    ```
+    heightX(height, iPhoneX)
+    ```
+3. Keep your cross-platform styles but set specific values for iPhoneX.
+    ```
+    crossWidthX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
+    ```
+4. ResponsiveWidth for all devices except specific values for iPhoneX.
+    ```
+    widthX(width, iPhoneX)
+    ```
+5. Keep your cross-platform styles but set specific values for iPhoneX.
+    ```
+    crossFontSizeX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
+    ```
+6. ResponsiveFontSize for all devices except specific values for iPhoneX.
+    ```
+    fontSizeX(size, iPhoneX)
+    ```
+
+## Example
+    ```
+    flexContainer: {
+        backgroundColor: white,
+        borderColor: grey,
+        borderRadius: responsiveHeight(100),
+        borderWidth: 1,
+        display: "flex",
+        left: crossWidthX(72, 68.5, 72, 66.5, 78.5),
+        padding: responsiveHeight(1),
+        position: "absolute",
+        top: crossResponsiveHeight(41, 39.5, 40, 39.5),
+        zIndex: 1
+    }
+    ```
 ## License
 MIT © [drumnation](https://github.com/drumnation/react-native-cross-responsive-dimensions)
