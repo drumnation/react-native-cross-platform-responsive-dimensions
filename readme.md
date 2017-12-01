@@ -1,4 +1,4 @@
-# react-native-cross-responsive-dimensions 
+# react-native-cross-platform-responsive-dimensions 
 <!-- [![Travis Build Status](https://img.shields.io/travis/drumnation/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://travis-ci.org/drumnation/react-native-cross-responsive-dimensions) [![David](https://img.shields.io/david/dev/drumnation/react-native-cross-responsive-dimensions.svg?style=flat-square)](https://david-dm.org/drumnation/react-native-cross-responsive-dimensions?type=dev) -->
 [![npm](https://img.shields.io/npm/dt/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://www.npmjs.com/package/react-native-cross-platform-responsive-dimensions)
 
@@ -8,7 +8,7 @@ As soon as I started working on the Android version I realized I would need spec
 
 ## Install
 ```bash
-$ npm install react-native-cross-responsive-dimensions --save
+$ npm install react-native-cross-platform-responsive-dimensions --save
 ```
 
 ## Usage
