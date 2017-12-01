@@ -34,22 +34,58 @@ $ npm install react-native-cross-platform-responsive-dimensions --save
     ```
 2. Use the cross platform methods in your jss stylesheets. The function takes allows you to use responsive dimensions, setting different values with arguments that match the device: (IOS phone, IOS tablet, AndroidPhone, AndroidTablet). This will also help lock the values for each device and OS to avoid wack-a-mole fix-breaking something on a different device than you're testing on.
     ```
-    container: {
-        backgroundColor: "white",
-        height: crossResponsiveHeight(43, 43, 43, 43),
-        marginLeft: crossResponsiveWidth(10, 10, 10, 10),
-        marginRight: crossResponsiveWidth(10, 10, 10, 10),
-        top: crossResponsiveHeight(-14, -14, -14, -14),
-        width: crossResponsiveWidth(80, 80, 80, 80)
-    },
-    ballConnected: {
-        color: "green",
-        fontFamily: crossPlatformOS("Neuropolitical", "neuropolitical_regular"),
-        fontSize: crossResponsiveFontSize(4.5, 4.5, 4.5, 4.5),
-        marginTop: crossResponsiveHeight(-30, -30, -20, -30),
-        textAlign: "center",
-        top: crossResponsiveHeight(10, 10, 10, 10)
-    },
+    const styles = StyleSheet.create({
+        modal: {
+            alignSelf: "center",
+            backgroundColor: teal,
+            borderRadius: responsiveHeight(5),
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: crossResponsiveHeight(31, 32, 31, 32),
+            marginTop: crossResponsiveHeight(36, 32.5, 36, 32.5),
+            width: crossResponsiveWidth(75, 55, 75, 55)
+        },
+        modalItem: {
+            alignContent: "center",
+            alignSelf: "center",
+            backgroundColor: transparent,
+            textAlign: "center",
+            width: responsiveWidth(55)
+        },
+        modalBounceGoalText: {
+            fontFamily: crossPlatformOS("Neuropolitical", "neuropolitical_regular"),
+            fontSize: responsiveFontSize(3.5),
+            marginTop: responsiveHeight(2),
+            color: white
+        },
+        modalBadgeNameText: {
+            color: white,
+            fontWeight: "400",
+            fontFamily: crossPlatformOS("Myriad Pro", "myriadpro_regular"),
+            fontSize: responsiveFontSize(2),
+            marginTop: responsiveHeight(2)
+        },
+        badgeImage: {
+            display: "flex",
+            justifyContent: "center",
+            alignSelf: "center",
+            height: crossResponsiveWidth(25, 20, 20, 15),
+            marginLeft: responsiveWidth(1),
+            marginRight: responsiveWidth(1),
+            width: crossResponsiveWidth(25, 20, 20, 15)
+        },
+        xImage: {
+            height: responsiveHeight(4.5),
+            width: responsiveHeight(4.5)
+        },
+        xContainer: {
+            alignSelf: "flex-end",
+            display: "flex",
+            top: crossResponsiveHeight(1.8, 1.5, 2, 2),
+            marginRight: crossResponsiveWidth(8, 4.5, 12, 12),
+            width: responsiveWidth(4)
+        }
+    });
     ```
 
 3. Use crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet) for the same cross platform ease, but without the responsive scaling.
