@@ -140,6 +140,33 @@ I've added some new functions to deal with devices that don't quite fit the dime
     fontSizeX(size, iPhoneX)
     ```
 
+## Note 8
+
+1. Keep your cross-platform styles but set specific values for note8.
+    ```
+    crossHeightX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    ```
+2. ResponsiveHeight for all devices except specific values for note8.
+    ```
+    heightX(height, note8)
+    ```
+3. Keep your cross-platform styles but set specific values for note8.
+    ```
+    crossWidthX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    ```
+4. ResponsiveWidth for all devices except specific values for note8.
+    ```
+    widthX(width, note8)
+    ```
+5. Keep your cross-platform styles but set specific values for note8.
+    ```
+    crossFontSizeX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    ```
+6. ResponsiveFontSize for all devices except specific values for note8.
+    ```
+    fontSizeX(size, note8)
+    ```
+
 ## Example
     
     flexContainer: {
