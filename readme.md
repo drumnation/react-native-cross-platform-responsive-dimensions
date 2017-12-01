@@ -22,7 +22,15 @@ $ npm install react-native-cross-platform-responsive-dimensions --save
         crossResponsiveWidth,
         crossResponsiveFontSize,
         crossPlatformOS,
-        crossPlatformDevice } from "react-native-cross-platform-responsive-dimensions";
+        crossPlatformDevice,
+        crossHeightX,
+        heightX,
+        widthX,
+        fontSizeX,
+        crossFontSizeX,
+        crossWidthX,
+        crossHeightX 
+        } from "react-native-cross-platform-responsive-dimensions";
     ```
 2. Use the cross platform methods in your jss stylesheets. The function takes allows you to use responsive dimensions, setting different values with arguments that match the device: (IOS phone, IOS tablet, AndroidPhone, AndroidTablet). This will also help lock the values for each device and OS to avoid wack-a-mole fix-breaking something on a different device than you're testing on.
     ```
@@ -97,7 +105,7 @@ I've added some new functions to deal with devices that don't quite fit the dime
     ```
 
 ## Example
-    ```
+    
     flexContainer: {
         backgroundColor: white,
         borderColor: grey,
@@ -110,6 +118,6 @@ I've added some new functions to deal with devices that don't quite fit the dime
         top: crossResponsiveHeight(41, 39.5, 40, 39.5),
         zIndex: 1
     }
-    ```
+
 ## License
 MIT © [drumnation](https://github.com/drumnation/react-native-cross-responsive-dimensions)
