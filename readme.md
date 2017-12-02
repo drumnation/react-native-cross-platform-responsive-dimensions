@@ -57,7 +57,9 @@ import {
     } from "react-native-cross-platform-responsive-dimensions";
 ```
 
-2. Use these positioning methods like **crossPlatformHeight(IOS phone, IOS tablet, AndroidPhone, AndroidTablet)** in your JSS stylesheets. You won't always need a different value for each OS or device type, so make sure to use the method that allows you to be only as specific as you need.
+2. Use these positioning methods like **crossPlatformHeight(IOS phone, IOS tablet, AndroidPhone, AndroidTablet)** in your **JSS** stylesheets. 
+
+    *You won't always need a different value* for each **OS** or **Device** type, so make sure to use the method that allows you to only be as specific as you need.
     
 ```js
 const styles = StyleSheet.create({
@@ -114,7 +116,9 @@ const styles = StyleSheet.create({
 });
 ```
 
-3. Use **crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet)** for the same cross platform ease, but without the responsive scaling, put anything you want into the method and use it like a switch.
+3. Use **crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet)** for the same cross platform ease, but without the responsive scaling. 
+
+    Put anything you want into the method and use it like a switch.
 
 ```html
 <Image
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
 />
 ```
 
-4. Use **crossPlatformOS(ios, android)** when you don't need to specify individual values for all devices, but only need to specify either android or ios. Similar to the **crossPlatformDevice** this doesn't produce an integer value. 
+4. Use **crossPlatformOS(ios, android)** when you don't need to specify individual values for all devices, but only need to specify either android or ios. 
 
     This is useful for fonts because each OS requires the font be stated differently.
 
@@ -149,36 +153,36 @@ fontSize: responsiveFontSize(4)
 I've added some new functions to deal with devices that don't quite fit the dimensions of normal phones.  If you find you need to move something specifically for the notch on the iPhoneX, you can use these functions to do so.
 
 
-#### 1. Keep your cross-platform styles but set specific values for iPhoneX.
+#### 1. Keep your cross-platform styles but set a specific value for iPhoneX.
 
 ```js
 crossHeightX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
 ```
 
-#### 2. ResponsiveHeight for all devices except specific values for iPhoneX.
+#### 2. ResponsiveHeight for all devices except a specific value for iPhoneX.
 
 ```js
 heightX(height, iPhoneX)
 ```
 
-#### 3. Keep your cross-platform styles but set specific values for iPhoneX.
+#### 3. Keep your cross-platform styles but set a specific value for iPhoneX.
 
 ```js
 crossWidthX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
 ```
-#### 4. ResponsiveWidth for all devices except specific values for iPhoneX.
+#### 4. ResponsiveWidth for all devices except a specific value for iPhoneX.
 
 ```js
 widthX(width, iPhoneX)
 ```
 
-#### 5. Keep your cross-platform styles but set specific values for iPhoneX.
+#### 5. Keep your cross-platform styles but set a specific value for iPhoneX.
 
 ```js
 crossFontSizeX(iosPhone, iosTablet, androidPhone, androidTablet, iPhoneX)
 ```
 
-#### 6. ResponsiveFontSize for all devices except specific values for iPhoneX.
+#### 6. ResponsiveFontSize for all devices except a specific value for iPhoneX.
 
 ```js
 fontSizeX(size, iPhoneX)
@@ -201,37 +205,37 @@ fontSizeX(size, iPhoneX)
 
 ## Note 8
 
-#### 1. Keep your cross-platform styles but set specific values for note8.
+#### 1. Keep your cross-platform styles but set a specific value for note8.
 
 ```js
 crossHeightN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
 ```
 
-#### 2. ResponsiveHeight for all devices except specific values for note8.
+#### 2. ResponsiveHeight for all devices except a specific value for note8.
 
 ```js
 heightN8(height, note8)
 ```
 
-#### 3. Keep your cross-platform styles but set specific values for note8.
+#### 3. Keep your cross-platform styles but set a specific value for note8.
 
 ```js
 crossWidthN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
 ```
 
-#### 4. ResponsiveWidth for all devices except specific values for the Note8.
+#### 4. ResponsiveWidth for all devices except a specific value for the Note8.
 
 ```js
 widthN8(width, note8)
 ```
 
-#### 5. Keep your cross-platform styles but set specific values for the Note8.
+#### 5. Keep your cross-platform styles but set a specific value for the Note8.
 
 ```js
 crossFontSizeN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
 ```
 
-#### 6. ResponsiveFontSize for all devices except specific values for the Note8.
+#### 6. ResponsiveFontSize for all devices except a specific value for the Note8.
 
 ```js
 fontSizeN8(size, note8)
