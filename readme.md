@@ -144,27 +144,27 @@ I've added some new functions to deal with devices that don't quite fit the dime
 
 1. Keep your cross-platform styles but set specific values for note8.
     ```
-    crossHeightX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    crossHeightN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
     ```
 2. ResponsiveHeight for all devices except specific values for note8.
     ```
-    heightX(height, note8)
+    heightN8(height, note8)
     ```
 3. Keep your cross-platform styles but set specific values for note8.
     ```
-    crossWidthX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    crossWidthN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
     ```
 4. ResponsiveWidth for all devices except specific values for note8.
     ```
-    widthX(width, note8)
+    widthN8(width, note8)
     ```
 5. Keep your cross-platform styles but set specific values for note8.
     ```
-    crossFontSizeX(iosPhone, iosTablet, androidPhone, androidTablet, note8)
+    crossFontSizeN8(iosPhone, iosTablet, androidPhone, androidTablet, note8)
     ```
 6. ResponsiveFontSize for all devices except specific values for note8.
     ```
-    fontSizeX(size, note8)
+    fontSizeN8(size, note8)
     ```
 
 ## Example
