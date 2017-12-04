@@ -364,3 +364,131 @@ export const crossFontSizeN8 = (
   }
   return dimension;
 };
+
+export const crossFontSizeXN8 = (
+  iosPhone,
+  iosTablet,
+  androidPhone,
+  androidTablet,
+  iPhoneX,
+  note8
+) => {
+  if (
+    Platform.OS === "ios" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "iPhone X"
+  ) {
+    dimension = responsiveFontSize(iosPhone);
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveFontSize(iosTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveFontSize(iPhoneX);
+  } else if (
+    Platform.OS === "android" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "SM-N950U"
+  ) {
+    dimension = responsiveFontSize(androidPhone);
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveFontSize(androidTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveFontSize(note8);
+  }
+  return dimension;
+};
+
+export const crossHeightXN8 = (
+  iosPhone,
+  iosTablet,
+  androidPhone,
+  androidTablet,
+  iPhoneX,
+  note8
+) => {
+  if (
+    Platform.OS === "ios" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "iPhone X"
+  ) {
+    dimension = responsiveHeight(iosPhone);
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveHeight(iosTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveHeight(iPhoneX);
+  } else if (
+    Platform.OS === "android" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "SM-N950U"
+  ) {
+    dimension = responsiveHeight(androidPhone);
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveHeight(androidTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveHeight(note8);
+  }
+  return dimension;
+};
+
+export const crossWidthXN8 = (
+  iosPhone,
+  iosTablet,
+  androidPhone,
+  androidTablet,
+  iPhoneX,
+  note8
+) => {
+  if (
+    Platform.OS === "ios" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "iPhone X"
+  ) {
+    dimension = responsiveWidth(iosPhone);
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveWidth(iosTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveWidth(iPhoneX);
+  } else if (
+    Platform.OS === "android" &&
+    !NativeModules.RNDeviceInfo.isTablet &&
+    NativeModules.RNDeviceInfo.model !== "SM-N950U"
+  ) {
+    dimension = responsiveWidth(androidPhone);
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveWidth(androidTablet);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveWidth(note8);
+  }
+  return dimension;
+};
+
+export const fontSizeXN8 = (size, iPhoneX, note8) => {
+  if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveFontSize(iPhoneX);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveFontSize(note8);
+  } else {
+    dimension = responsiveFontSize(size);
+  }
+  return dimension;
+};
+
+export const widthXN8 = (size, iPhoneX, note8) => {
+  if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveWidth(iPhoneX);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveWidth(note8);
+  } else {
+    dimension = responsiveWidth(size);
+  }
+  return dimension;
+};
+export const heightXN8 = (size, iPhoneX, note8) => {
+  if (NativeModules.RNDeviceInfo.model === "iPhone X") {
+    dimension = responsiveHeight(iPhoneX);
+  } else if (NativeModules.RNDeviceInfo.model === "SM-N950U") {
+    dimension = responsiveHeight(note8);
+  } else {
+    dimension = responsiveHeight(size);
+  }
+  return dimension;
+};

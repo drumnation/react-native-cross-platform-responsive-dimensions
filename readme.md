@@ -48,6 +48,9 @@ import {
     heightN8,
     widthN8,
     fontSizeN8,
+    heightXN8,
+    widthXN8,
+    fontSizeXN8,
     crossResponsiveHeight,
     crossResponsiveWidth,
     crossResponsiveFontSize,
@@ -59,6 +62,9 @@ import {
     crossWidthN8,
     crossHeightN8 
     crossFontSizeN8,
+    crossHeightXN8,
+    crossWidthXN8,
+    crossFontSizeXN8,
     } from "react-native-cross-platform-responsive-dimensions";
 ```
 
@@ -331,5 +337,69 @@ flexContainer: {
     zIndex: 1
 }
 ```
+
+# Hybrid iPhoneX + Note 8
+
+ResponsiveHeight for cross device and platform as well as both iPhoneX and Note8.
+
+```js
+crossHeightXN8(iPhone, IOSTablet, AndroidPhone, AndroidTablet, iPhoneX, Note8)
+```
+
+ResponsiveHeight for cross device and platform as well as both iPhoneX and Note8.
+
+```js
+crossFontSizeXN8(iPhone, IOSTablet, AndroidPhone, AndroidTablet, iPhoneX, Note8)
+```
+
+ResponsiveWidth for cross device and platform as well as both iPhoneX and Note8.
+
+```js
+crossWidthXN8(iPhone, IOSTablet, AndroidPhone, AndroidTablet, iPhoneX, Note8)
+```
+
+ResponsiveWidth for all devices as well as specifically the iPhoneX and Note8.
+```js
+widthXN8(size, iPhoneX, note8)
+```
+ResponsiveHeight for all devices as well as specifically the iPhoneX and Note8.
+
+```js
+heightXN8(size, iPhoneX, note8)
+```
+
+ResponsiveFontSize for all devices as well as specifically the iPhoneX and Note8.
+
+```js
+fontSizeXN8(size, iPhoneX, note8)
+```
+
+# Examples
+
+```js
+modalSubText: {
+    color: black,
+    fontFamily: crossPlatformOS("Neuropolitical", "neuropolitical_regular"),
+    fontSize: fontSizeXN8(3.5, 3.1, 2.95),
+    marginTop: responsiveHeight(2)
+}
+```
+
+```js
+flexContainer: {
+    backgroundColor: white,
+    borderColor: grey,
+    borderRadius: responsiveHeight(100),
+    borderWidth: 1,
+    display: "flex",
+    justifyContent: "space-between",
+    left: crossWidthXN8(72, 68.5, 72, 66.5, 78.5, 75),
+    padding: responsiveHeight(1),
+    position: "absolute",
+    top: crossResponsiveHeight(41, 39.5, 40, 39.5),
+    zIndex: 1
+},
+```
+
 ## License
 MIT © [drumnation](https://github.com/drumnation/react-native-cross-responsive-dimensions)
