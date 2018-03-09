@@ -1,6 +1,6 @@
 {
   "name": "react-native-cross-platform-responsive-dimensions",
-  "version": "0.8.10",
+  "version": "0.8.11",
   "description": "Cross Platform resposive fontSize, height and width for your react-native components. Specify different values for iPhone, IOS Tablet, Android Phone, or Android Tablet. Based on responsive dimensions by DaniAkash: https://github.com/DaniAkash/react-native-responsive-dimensions/",
   "repository": {
     "type": "git",

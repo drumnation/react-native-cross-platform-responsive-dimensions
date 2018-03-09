@@ -97,6 +97,9 @@ export const crossResponsiveFontSize = (
 export const crossPlatformOS = (ios, android) =>
   Platform.OS === "ios" ? ios : android;
 
+export const crossPlatformImg = image =>
+  Platform.OS === "ios" ? image : image.slice(0, -4);
+
 export const crossPlatformDevice = (
   iosPhone,
   iosTablet,
@@ -492,3 +495,28 @@ export const heightXN8 = (size, iPhoneX, note8) => {
   }
   return dimension;
 };
+
+export const deviceHeight = (phone, tablet) => {
+  if (!NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveHeight(phone);
+  } else {
+    dimension = responsiveHeight(tablet);
+  }
+  return dimension;
+}
+export const deviceWidth = (phone, tablet) => {
+  if (!NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveWidth(phone);
+  } else {
+    dimension = responsiveWidth(tablet);
+  }
+  return dimension;
+}
+export const deviceFontSize = (phone, tablet) => {
+  if (!NativeModules.RNDeviceInfo.isTablet) {
+    dimension = responsiveFontSize(phone);
+  } else {
+    dimension = responsiveFontSize(tablet);
+  }
+  return dimension;
+}

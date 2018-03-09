@@ -2,6 +2,10 @@
 <!-- [![Travis Build Status](https://img.shields.io/travis/drumnation/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://travis-ci.org/drumnation/react-native-cross-responsive-dimensions) [![David](https://img.shields.io/david/dev/drumnation/react-native-cross-responsive-dimensions.svg?style=flat-square)](https://david-dm.org/drumnation/react-native-cross-responsive-dimensions?type=dev) -->
 [![npm](https://img.shields.io/npm/dt/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://www.npmjs.com/package/react-native-cross-platform-responsive-dimensions)
 
+## UPDATE:
+
+Added ```crossPlatformImg(image)``` for trimming the extension off of native image file names on Android devices, and keeping them on IOS.
+
 ## Here's a little magic to make your cross-platform JSS pop...
 
 This package started as a fork of [react-native-responsive-dimensions](https://github.com/DaniAkash/react-native-responsive-dimensions) which allows developers to use percentages in their JSS to scale integer values based on the user's device dimensions. This worked great for me and was using it all the time, but when I started working on the tablet version of my app I quickly realized that tablets have a different [aspect ratio](https://material.io/devices/) than phones. And this meant I needed to set a different value for tablets that when scaled would look correctly on all other tablets. 
@@ -55,6 +59,7 @@ import {
     crossResponsiveWidth,
     crossResponsiveFontSize,
     crossPlatformOS,
+    crossPlatformImg,
     crossPlatformDevice,
     crossWidthX,
     crossHeightX 
@@ -166,6 +171,16 @@ This is useful for fonts because each OS requires the font be declared different
 
 ```js
 crossPlatformOS("Neuropolitical", "neuropolitical_regular")
+
+```
+Use ```crossPlatformImg(image)``` when you are loading images from [Hybrid App Resources](https://facebook.github.io/react-native/docs/images.html), adding them into your IOS project, and adding them into your Android drawable folder.  IOS wants to see the file with the file extension and Android wants it without. 
+
+Android requires that you also start the file name with a letter and separate each word with an underscore. IOS won't care so might as well format your file names for Android. 
+
+This function removes the file extension when the device is running Android ("button" instead of "button.png"), and keeps it for IOS. You must also use .png's for native images. The method trims off the last 4 characters so if you use this with an extension with a different number characters it won't work right.
+
+```js
+crossPlatformImg("button.png")
 ```
 
 # Responsive Dimensions Methods
