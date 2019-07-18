@@ -1,4 +1,4 @@
-# react-native-cross-platform-responsive-dimensions 
+# react-native-cross-platform-responsive-dimensions
 <!-- [![Travis Build Status](https://img.shields.io/travis/drumnation/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://travis-ci.org/drumnation/react-native-cross-responsive-dimensions) [![David](https://img.shields.io/david/dev/drumnation/react-native-cross-responsive-dimensions.svg?style=flat-square)](https://david-dm.org/drumnation/react-native-cross-responsive-dimensions?type=dev) -->
 [![npm](https://img.shields.io/npm/dt/react-native-cross-platform-responsive-dimensions.svg?style=flat-square)](https://www.npmjs.com/package/react-native-cross-platform-responsive-dimensions)
 
@@ -8,13 +8,13 @@ Added ```crossPlatformImg(image)``` for trimming the extension off of native ima
 
 ## Here's a little magic to make your cross-platform JSS pop...
 
-This package started as a fork of [react-native-responsive-dimensions](https://github.com/DaniAkash/react-native-responsive-dimensions) which allows developers to use percentages in their JSS to scale integer values based on the user's device dimensions. This worked great for me and was using it all the time, but when I started working on the tablet version of my app I quickly realized that tablets have a different [aspect ratio](https://material.io/devices/) than phones. And this meant I needed to set a different value for tablets that when scaled would look correctly on all other tablets. 
+This package started as a fork of [react-native-responsive-dimensions](https://github.com/DaniAkash/react-native-responsive-dimensions) which allows developers to use percentages in their JSS to scale integer values based on the user's device dimensions. This worked great for me and was using it all the time, but when I started working on the tablet version of my app I quickly realized that tablets have a different [aspect ratio](https://material.io/devices/) than phones. And this meant I needed to set a different value for tablets that when scaled would look correctly on all other tablets.
 
 When I finished with my phone and tablet build for IOS, I shifted to Android and was disappointed to see that my app looked like it had been in a terrible car accident.
 
 ## Android and IOS won't interpret your codebase the same.
 
-Android and IOS will not always process the same style property in the same way, a perfect example is how [custom React-Native fonts work](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e).  On IOS you need to use the font's display name in the stylesheet while on Android you need to downcase the font, underscore, and add the font style ex. "myriadpro_regular". 
+Android and IOS will not always process the same style property in the same way, a perfect example is how [custom React-Native fonts work](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e).  On IOS you need to use the font's display name in the stylesheet while on Android you need to downcase the font, underscore, and add the font style ex. "myriadpro_regular".
 
 In this situation you are forced to list each in it's own distinct way because neither will understand the other.  There are a whole host of tiny differences that pop up between platforms and my goal was to create an API with the tools to solve these problems as elegantly as possible.
 
@@ -36,10 +36,14 @@ As a React-Native developer our greatest value to our clients is the ability to 
 ```bash
 $ npm install react-native-cross-platform-responsive-dimensions --save
 ```
+```bash
+$ npm install react-native-device-info --save //be sure to link
+```
+
 
 # Available API Methods
 
-#### Add an import to the top of your file with the methods you need. 
+#### Add an import to the top of your file with the methods you need.
 
 ```js
 import {
@@ -62,10 +66,10 @@ import {
     crossPlatformImg,
     crossPlatformDevice,
     crossWidthX,
-    crossHeightX 
+    crossHeightX
     crossFontSizeX,
     crossWidthN8,
-    crossHeightN8 
+    crossHeightN8
     crossFontSizeN8,
     crossHeightXN8,
     crossWidthXN8,
@@ -75,16 +79,16 @@ import {
 
 # Positioning Methods
 
-Use these positioning methods in your **JSS** stylesheets: 
+Use these positioning methods in your **JSS** stylesheets:
 
 + ```crossResponsiveHeight```
 + ```crossResponsiveWidth```
-+ ```crossResponsiveFontSize``` 
-    
++ ```crossResponsiveFontSize```
+
 These allow you to set individual percentage based properties for tablets and phones on both operating systems.
 
 ## Inputs
-```crossResponsiveHeight(IOS_Phone, IOS_Tablet, Android_Phone, Android_Tablet)``` 
+```crossResponsiveHeight(IOS_Phone, IOS_Tablet, Android_Phone, Android_Tablet)```
 
 *You won't always need a different value* for each **OS** or **Device** type, so make sure to use the method that allows you to only be as specific as you need.
 
@@ -149,7 +153,7 @@ const styles = StyleSheet.create({
 
 # Cross Platform/Device Switch Methods
 
-Use ```crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet)``` for the same cross platform ease, but without the responsive scaling. 
+Use ```crossPlatformDevice(iosPhone, iosTablet, androidPhone, androidTablet)``` for the same cross platform ease, but without the responsive scaling.
 
 Put any type of element you need into it and use it like a **switch**.
 
@@ -165,7 +169,7 @@ Put any type of element you need into it and use it like a **switch**.
 />
 ```
 
-Use ```crossPlatformOS(ios, android)``` when you don't need to specify individual values for all devices, but only need to specify either Android or IOS. 
+Use ```crossPlatformOS(ios, android)``` when you don't need to specify individual values for all devices, but only need to specify either Android or IOS.
 
 This is useful for fonts because each OS requires the font be declared differently.
 
@@ -173,9 +177,9 @@ This is useful for fonts because each OS requires the font be declared different
 crossPlatformOS("Neuropolitical", "neuropolitical_regular")
 
 ```
-Use ```crossPlatformImg(image)``` when you are loading images from [Hybrid App Resources](https://facebook.github.io/react-native/docs/images.html), adding them into your IOS project, and adding them into your Android drawable folder.  IOS wants to see the file with the file extension and Android wants it without. 
+Use ```crossPlatformImg(image)``` when you are loading images from [Hybrid App Resources](https://facebook.github.io/react-native/docs/images.html), adding them into your IOS project, and adding them into your Android drawable folder.  IOS wants to see the file with the file extension and Android wants it without.
 
-Android requires that you also start the file name with a letter and separate each word with an underscore. IOS won't care so might as well format your file names for Android. 
+Android requires that you also start the file name with a letter and separate each word with an underscore. IOS won't care so might as well format your file names for Android.
 
 This function removes the file extension when the device is running Android ("button" instead of "button.png"), and keeps it for IOS. You must also use .png's for native images. The method trims off the last 4 characters so if you use this with an extension with a different number characters it won't work right.
 
@@ -192,7 +196,7 @@ marginLeft: responsiveWidth(10),
 fontSize: responsiveFontSize(4)
 ```
 
-You can also use these methods outside of JSS in creative ways anytime you'd like to create a device scaled value. 
+You can also use these methods outside of JSS in creative ways anytime you'd like to create a device scaled value.
 
 Here I used it to create a device scaled circle:
 
@@ -282,7 +286,7 @@ fontSizeX(size, iPhoneX)
 ```
 
 ## iPhone X Example
-    
+
     flexContainer: {
         backgroundColor: white,
         borderColor: grey,
@@ -337,7 +341,7 @@ fontSizeN8(size, note8)
 ```
 
 ## Note 8 Example
-    
+
 ```js
 flexContainer: {
     backgroundColor: white,
