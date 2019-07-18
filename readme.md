@@ -36,10 +36,10 @@ As a React-Native developer our greatest value to our clients is the ability to 
 ```bash
 $ npm install react-native-cross-platform-responsive-dimensions --save
 ```
-```bash
-$ npm install react-native-device-info --save //be sure to link
-```
 
+```bash
+$ npm intall react-native-device-info --save //be sure to link
+```
 
 # Available API Methods
 
