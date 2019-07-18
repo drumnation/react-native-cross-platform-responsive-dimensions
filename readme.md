@@ -37,6 +37,10 @@ As a React-Native developer our greatest value to our clients is the ability to 
 $ npm install react-native-cross-platform-responsive-dimensions --save
 ```
 
+```bash
+$ npm install npm intall react-native-device-info --save //don't forget to link
+```
+
 # Available API Methods
 
 #### Add an import to the top of your file with the methods you need. 
