@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-import { NativeModules, Platform, Dimensions } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+import { NativeModules, Platform, Dimensions } from "react-native";
+import DeviceInfo from "react-native-device-info";
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get("window");
 export const isPortrait = () => {
   if (height > width) return true;
   return false;
@@ -51,7 +51,7 @@ export const crossResponsiveHeight = (
   androidTablet
 ) => {
   const dimension =
-    Platform.OS === 'ios'
+    Platform.OS === "ios"
       ? !NativeModules.RNDeviceInfo.isTablet
         ? responsiveHeight(iosPhone)
         : responsiveHeight(iosTablet)
@@ -68,7 +68,7 @@ export const crossResponsiveWidth = (
   androidTablet
 ) => {
   const dimension =
-    Platform.OS === 'ios'
+    Platform.OS === "ios"
       ? !NativeModules.RNDeviceInfo.isTablet
         ? responsiveWidth(iosPhone)
         : responsiveWidth(iosTablet)
@@ -85,7 +85,7 @@ export const crossResponsiveFontSize = (
   androidTablet
 ) => {
   const fontSize =
-    Platform.OS === 'ios'
+    Platform.OS === "ios"
       ? !NativeModules.RNDeviceInfo.isTablet
         ? responsiveFontSize(iosPhone)
         : responsiveFontSize(iosTablet)
@@ -96,10 +96,10 @@ export const crossResponsiveFontSize = (
 };
 
 export const crossPlatformOS = (ios, android) =>
-  Platform.OS === 'ios' ? ios : android;
+  Platform.OS === "ios" ? ios : android;
 
 export const crossPlatformImg = image =>
-  Platform.OS === 'ios' ? image : image.slice(0, -4);
+  Platform.OS === "ios" ? image : image.slice(0, -4);
 
 export const crossPlatformDevice = (
   iosPhone,
@@ -108,7 +108,7 @@ export const crossPlatformDevice = (
   androidTablet
 ) => {
   const deviceProperty =
-    Platform.OS === 'ios'
+    Platform.OS === "ios"
       ? !NativeModules.RNDeviceInfo.isTablet ? iosPhone : iosTablet
       : !NativeModules.RNDeviceInfo.isTablet ? androidPhone : androidTablet;
   return deviceProperty;
@@ -124,21 +124,21 @@ export const crossHeightX = (
   iPhoneX
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveHeight(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveHeight(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveHeight(iPhoneX);
   }
   return dimension;
@@ -146,21 +146,21 @@ export const crossHeightX = (
 
 export const heightX = (height, iPhoneX) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveHeight(height);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(height);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveHeight(height);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(height);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveHeight(iPhoneX);
   }
   return dimension;
@@ -174,21 +174,21 @@ export const crossWidthX = (
   iPhoneX
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveWidth(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveWidth(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveWidth(iPhoneX);
   }
   return dimension;
@@ -196,21 +196,21 @@ export const crossWidthX = (
 
 export const widthX = (width, iPhoneX) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveWidth(width);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(width);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveWidth(width);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(width);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveWidth(iPhoneX);
   }
   return dimension;
@@ -224,21 +224,21 @@ export const crossFontSizeX = (
   iPhoneX
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveFontSize(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveFontSize(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveFontSize(iPhoneX);
   }
   return dimension;
@@ -246,21 +246,21 @@ export const crossFontSizeX = (
 
 export const fontSizeX = (size, iPhoneX) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveFontSize(size);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(size);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet
   ) {
     dimension = responsiveFontSize(size);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(size);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveFontSize(iPhoneX);
   }
   return dimension;
@@ -269,7 +269,7 @@ export const fontSizeX = (size, iPhoneX) => {
 // Note 8 - specific styling
 
 export const fontSizeN8 = (size, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     return responsiveFontSize(note8);
   } else {
     return responsiveFontSize(size);
@@ -277,7 +277,7 @@ export const fontSizeN8 = (size, note8) => {
 };
 
 export const widthN8 = (size, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     return responsiveWidth(note8);
   } else {
     return responsiveWidth(size);
@@ -285,7 +285,7 @@ export const widthN8 = (size, note8) => {
 };
 
 export const heightN8 = (size, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     return responsiveHeight(note8);
   } else {
     return responsiveHeight(size);
@@ -301,19 +301,19 @@ export const crossHeightN8 = (
   androidTablet,
   note8
 ) => {
-  if (Platform.OS === 'ios' && !NativeModules.RNDeviceInfo.isTablet) {
+  if (Platform.OS === "ios" && !NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveHeight(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveHeight(note8);
   }
   return dimension;
@@ -326,19 +326,19 @@ export const crossWidthN8 = (
   androidTablet,
   note8
 ) => {
-  if (Platform.OS === 'ios' && !NativeModules.RNDeviceInfo.isTablet) {
+  if (Platform.OS === "ios" && !NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveWidth(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveWidth(note8);
   }
   return dimension;
@@ -351,19 +351,19 @@ export const crossFontSizeN8 = (
   androidTablet,
   note8
 ) => {
-  if (Platform.OS === 'ios' && !NativeModules.RNDeviceInfo.isTablet) {
+  if (Platform.OS === "ios" && !NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(iosTablet);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveFontSize(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveFontSize(note8);
   }
   return dimension;
@@ -378,24 +378,24 @@ export const crossFontSizeXN8 = (
   note8
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveFontSize(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(iosTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveFontSize(iPhoneX);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveFontSize(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveFontSize(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveFontSize(note8);
   }
   return dimension;
@@ -410,24 +410,24 @@ export const crossHeightXN8 = (
   note8
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveHeight(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(iosTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveHeight(iPhoneX);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveHeight(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveHeight(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveHeight(note8);
   }
   return dimension;
@@ -442,33 +442,33 @@ export const crossWidthXN8 = (
   note8
 ) => {
   if (
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    !NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')
+    !NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")
   ) {
     dimension = responsiveWidth(iosPhone);
-  } else if (Platform.OS === 'ios' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "ios" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(iosTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  } else if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveWidth(iPhoneX);
   } else if (
-    Platform.OS === 'android' &&
+    Platform.OS === "android" &&
     !NativeModules.RNDeviceInfo.isTablet &&
-    NativeModules.RNDeviceInfo.deviceName !== 'SM-N950U'
+    NativeModules.RNDeviceInfo.deviceName !== "SM-N950U"
   ) {
     dimension = responsiveWidth(androidPhone);
-  } else if (Platform.OS === 'android' && NativeModules.RNDeviceInfo.isTablet) {
+  } else if (Platform.OS === "android" && NativeModules.RNDeviceInfo.isTablet) {
     dimension = responsiveWidth(androidTablet);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveWidth(note8);
   }
   return dimension;
 };
 
 export const fontSizeXN8 = (size, iPhoneX, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveFontSize(iPhoneX);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveFontSize(note8);
   } else {
     dimension = responsiveFontSize(size);
@@ -477,9 +477,9 @@ export const fontSizeXN8 = (size, iPhoneX, note8) => {
 };
 
 export const widthXN8 = (size, iPhoneX, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveWidth(iPhoneX);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveWidth(note8);
   } else {
     dimension = responsiveWidth(size);
@@ -487,9 +487,9 @@ export const widthXN8 = (size, iPhoneX, note8) => {
   return dimension;
 };
 export const heightXN8 = (size, iPhoneX, note8) => {
-  if (NativeModules.RNDeviceInfo.deviceName.includes('iPhone X')) {
+  if (NativeModules.RNDeviceInfo.deviceName.includes("iPhone X")) {
     dimension = responsiveHeight(iPhoneX);
-  } else if (NativeModules.RNDeviceInfo.deviceName === 'SM-N950U') {
+  } else if (NativeModules.RNDeviceInfo.deviceName === "SM-N950U") {
     dimension = responsiveHeight(note8);
   } else {
     dimension = responsiveHeight(size);
